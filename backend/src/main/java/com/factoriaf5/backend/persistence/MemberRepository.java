@@ -1,5 +1,9 @@
 package com.factoriaf5.backend.persistence;
 
-public class MemberRepository {
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MemberRepository extends JpaRepository<Member, UUID> {
     
 }
