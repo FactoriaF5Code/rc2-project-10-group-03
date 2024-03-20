@@ -22,7 +22,7 @@ public class Activity {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
     private String activityName;
     private String room;
     private String dayOfTheWeek;
