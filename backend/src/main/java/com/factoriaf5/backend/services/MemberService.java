@@ -20,7 +20,7 @@ public class MemberService {
         List<MemberResponse> members = new ArrayList<MemberResponse>();
         List<Member> membersInDataBaseMembers = memberRepository.findAll();
         for (Member member : membersInDataBaseMembers) {
-            members.add(new MemberResponse(member.getId(), member.getFirstName(), member.getLastName(), member.getEmail(), member.getPassword()));
+            members.add(new MemberResponse(member.getFirstName(), member.getLastName()));
         }
         return members;
     }
