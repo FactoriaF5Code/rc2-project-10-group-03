@@ -19,3 +19,9 @@
   --high-light-color: #FF9045;
   --background-color-light: #D9D9D9;
 }
+
+body {
+  background: url('.//presentation/assets/fondo.jpg');
+  background-size: cover;
+  height: 100vh;
+}
