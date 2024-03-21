@@ -1,7 +1,13 @@
 import './Header.css';
+import logo from '../../assets/logo.svg';
 
 export const Header = () => {
   return (
-    <div>Header</div>
+    <header>
+        <img src={logo} alt="Fitness Manager" />
+        <span>
+            <p>Nombre</p>
+        </span>
+    </header>
   )
 }
