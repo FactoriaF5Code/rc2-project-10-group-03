@@ -1,6 +1,49 @@
-section.form {
-    background-color: var(--background-color);
-    width: 60rem;
-    height: 30rem;
-    margin: 70vh auto;
+.login-form {
+  background-color: var(--background-color);
+  width: 60rem;
+  height: 30rem;
+  margin: 30vh auto;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.form-title {
+  color: var(--high-light-color);
+  font-size: 3rem;
+}
+
+.email-login,
+.password-login {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.login-form label {
+  font-size: 1.5rem;
+  color: var(--background-color-light);
+}
+.login-form input {
+  height: 2.5rem;
+  width: 30rem;
+  border-radius: 1.5rem;
+  background-color: var(--background-color-light);
+}
+
+.login-form button {
+  background-color: var(--high-light-color);
+  width: 10rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 1.5rem;
+  color: var(--background-color);
+  cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #ff9b58;
 }
