@@ -1,13 +1,13 @@
-import './App.css'
-import { AppRouter } from './midleware/router/AppRouter'
+import "./App.css";
+import { AppRouter } from "./midleware/router/AppRouter";
+import { ActivitiesProvider } from './midleware/context/ActivitiesContext';
 
 function App() {
-
   return (
-    <>
-    <AppRouter />
-    </>
-  )
+    <ActivitiesProvider>
+      <AppRouter />
+    </ActivitiesProvider>
+  );
 }
 
-export default App
+export default App;

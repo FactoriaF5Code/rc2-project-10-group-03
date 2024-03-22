@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "../../presentation/pages/HomePage";
 import { LoginForm } from "../../presentation/components/LoginForm/LoginForm";
-import { CalendarMember } from "../../presentation/components/CalendarMember/CalendarMember";
+import { CalendarMember } from "../../presentation/components/Calendar/Calendar";
 
 export const AppRouter = () => {
   return (
