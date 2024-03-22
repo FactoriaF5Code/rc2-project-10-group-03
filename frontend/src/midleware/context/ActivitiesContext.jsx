@@ -1,4 +1,5 @@
 import { ActivitiesService } from "../../services/ActivitiesService";
+import { createContext } from 'react';
 
 const ActivitiesContext = createContext();
 

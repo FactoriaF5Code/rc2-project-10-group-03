@@ -1,0 +1,43 @@
+.activities-calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 84vh;
+}
+
+table {
+    background-color: var(--background-color);
+    width: 70rem;
+    height: 30rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    color: var(--background-color-light);
+    padding: 3rem;
+}
+
+h2.activities-title {
+    color: var(--high-light-color);
+    background-color: var(--background-color);
+    font-size: 3rem;
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding-top: 2rem;
+}
+
+th {
+    background-color: var(--background-color-light);
+    color: var(--background-color);
+    font-size: 1.7rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    width: 15rem;
+}
+
+td {
+    background-color: var(--background-color-light);
+    color: var(--background-color);
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+}
