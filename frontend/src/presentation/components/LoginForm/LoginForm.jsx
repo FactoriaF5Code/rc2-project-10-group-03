@@ -1,4 +1,5 @@
 import "./LoginForm.css";
+import { Link } from 'react-router-dom';
 
 export const LoginForm = () => {
   return (
@@ -14,7 +15,7 @@ export const LoginForm = () => {
             <label htmlFor="password">Contraseña</label>
             <input type="password" name="password" />
           </div>
-          <button>Entrar</button>
+          <Link to="/calendario"><button>Entrar</button></Link>
         </form>
       </section>
     </main>
