@@ -4,28 +4,52 @@ import { ActivitiesContext } from "../../../midleware/context/ActivitiesContext"
 
 export const Calendar = () => {
   const { showActivities } = useContext(ActivitiesContext);
-  const [activities, setActivities] = useState([]);
   const [mondayData, setMondayData] = useState([]);
+  const [tuesdayData, setTuesdayData] = useState([]);
+  const [wednesdayData, setWednesdayData] = useState([]);
+  const [thursdayData, setThursdayData] = useState([]);
+  const [fridayData, setFridayData] = useState([]);
+
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    showActivities()
-      .then((response) => setActivities(response))
-      .catch((error) => setError("Ha ocurrido un error" + error));
-      setMondayData(activities.filter(activity => activity.dayOfTheWeek.toLowerCase().includes('Monday')));
-      console.log(mondayData);
+    const fetchData = async () => {
+      const response = await showActivities();
+      setMondayData(
+        response.filter((activity) =>
+          activity.dayOfTheWeek.toLowerCase().includes("monday")
+        )
+      );
+      setTuesdayData(
+        response.filter((activity) =>
+          activity.dayOfTheWeek.toLowerCase().includes("tuesday")
+        )
+      );
+      setWednesdayData(
+        response.filter((activity) =>
+          activity.dayOfTheWeek.toLowerCase().includes("wednesday")
+        )
+      );
+      setThursdayData(
+        response.filter((activity) =>
+          activity.dayOfTheWeek.toLowerCase().includes("thursday")
+        )
+      );
+      setFridayData(
+        response.filter((activity) =>
+          activity.dayOfTheWeek.toLowerCase().includes("friday")
+        )
+      );
+    };
+    fetchData();
   }, []);
-
-  
-  // const tuesdayData = activities.filter(activity => activity.dayOfTheWeek.toLowerCase().includes('Tuesday'));
-  // const wednesdayData = activities.filter(activity => activity.dayOfTheWeek.toLowerCase().includes('Wednesday'));
-  // const thursdayData = activities.filter(activity => activity.dayOfTheWeek.toLowerCase().includes('Thursday'));
-  // const fridayData = activities.filter(activity => activity.dayOfTheWeek.toLowerCase().includes('Friday'));
 
   return (
     <section className="activities-calendar">
       <table>
-        <caption><h2 className="activities-title">Activities Calendar</h2></caption>
+        <caption>
+          <h2 className="activities-title">Activities Calendar</h2>
+        </caption>
         <thead>
           <tr>
             <th>Monday</th>
@@ -36,17 +60,48 @@ export const Calendar = () => {
           </tr>
         </thead>
         <tbody>
-          
-            {mondayData.map((activity) => (
-              <tr>
-              <td key={activity.id}>
-                {activity.activityName} -&nbsp;
-                {activity.time}
-              </td>
-              </tr>
-            ))}
-          
-
+          <tr className="">
+            <td> 
+              {mondayData.map((activity) => (
+                <div className="day-container" key={activity.id}>
+                    {activity.activityName} -&nbsp;
+                    {activity.time}
+                </div>
+              ))}
+            </td>
+            <td> 
+              {tuesdayData.map((activity) => (
+                <div className="day-container"  key={activity.id}>
+                    {activity.activityName} -&nbsp;
+                    {activity.time}
+                </div>
+              ))}
+            </td>
+            <td> 
+              {wednesdayData.map((activity) => (
+                <div className="day-container"  key={activity.id}>
+                    {activity.activityName} -&nbsp;
+                    {activity.time}
+                </div>
+              ))}
+            </td>
+            <td> 
+              {thursdayData.map((activity) => (
+                <div className="day-container"  key={activity.id}>
+                    {activity.activityName} -&nbsp;
+                    {activity.time}
+                </div>
+              ))}
+            </td>
+            <td> 
+              {fridayData.map((activity) => (
+                <div className="day-container"  key={activity.id}>
+                    {activity.activityName} -&nbsp;
+                    {activity.time}
+                </div>
+              ))}
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>
