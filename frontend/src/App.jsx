@@ -1,6 +1,6 @@
 import "./App.css";
-import { AppRouter } from "./midleware/router/AppRouter";
-import { ActivitiesProvider } from './midleware/context/ActivitiesContext';
+import { AppRouter } from "./middleware/router/AppRouter";
+import { ActivitiesProvider } from './middleware/context/ActivitiesContext';
 
 function App() {
   return (
