@@ -20,7 +20,7 @@ public class ActivityService {
         List<ActivityResponse> activities = new ArrayList<ActivityResponse>();
         List<Activity> activitiesInDataBaseActivities = activityRepository.findAll();
         for (Activity activity : activitiesInDataBaseActivities) {
-            activities.add(new ActivityResponse(activity.getActivityName(), activity.getRoom(), activity.getDayOfTheWeek(), activity.getTime()));
+            activities.add(new ActivityResponse(activity.getId(), activity.getActivityName(), activity.getRoom(), activity.getDayOfTheWeek(), activity.getTime()));
         }
         return activities;
     }

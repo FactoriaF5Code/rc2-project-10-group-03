@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class ActivityResponse {
+    private Long id;
     private String activityName;
     private String room;
     private String dayOfTheWeek;
